@@ -1,25 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/13/2017 03:21:16 PM
-// Design Name: 
-// Module Name: Comparator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
+//This is model No 3 and 1 ... You can change the index bits i.e number of entries to get different hardware budget and accuracy
 module Index_Tag_Generator(CLK,reset,ghist,pc_addr, Index_bank1,Index_bank2,
 							Index_bank3, Index_bank4,
 							Comp_tag_bank1, Comp_tag_bank2, Comp_tag_bank3
