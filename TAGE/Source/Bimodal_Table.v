@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/07/2017 11:58:16 AM
-// Design Name: 
-// Module Name: PerceptronTable
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module 	Bimodal_Table(Clk, wr, rd, index/*pc*/, rdata_c_bits, correct_prediction, inc_counter, dec_counter,update_enable);
    
@@ -87,32 +67,3 @@ module 	Bimodal_Table(Clk, wr, rd, index/*pc*/, rdata_c_bits, correct_prediction
 	
 endmodule
 
- /*
-  always @(posedge clk)
-	begin
-		    if (wr && correct_prediction)
-				begin
-				
-					if(branch_taken || c_bits[index] !=3'b111)
-						c_bits[index]<=c_bits[index] + 1;
-					else if(~branch_taken || c_bits[index] !=3'b000)
-						c_bits[index]<=c_bits[index] - 1;
-					else
-						c_bits[index]<=c_bits[index];
-						
-				end
-			else if(wr && ~correct_prediction)
-				begin	
-			
-					if(branch_taken || c_bits[index] !=3'b000)		//branch_taken is predicted but since its wrong we decrement the c bit
-						c_bits[index]<=c_bits[index] - 1'b1;
-					else if(~branch_taken || c_bits[index] !=3'b111)	//branch not taken is predicted but since its wrong we increment the c bit
-						c_bits[index]<=c_bits[index] + 1'b1;
-					else
-						c_bits[index]<=c_bits[index];
-					
-				end
-					
-	end
-
-	*/
