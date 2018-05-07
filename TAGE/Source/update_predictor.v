@@ -1,25 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/13/2017 03:21:16 PM
-// Design Name: 
-// Module Name: Comparator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
+//This module update the precictor in terms of useful bits, predictor bits and tag bits..It generates the control for respective enteries to update
 module update_predictor(CLK,Branch_predicted, Actual_branch, Alloc,
 						u_bits_1, u_bits_2, u_bits_3, u_bits_4,
 						dec_bank1, dec_bank2, dec_bank3, dec_bank4,
