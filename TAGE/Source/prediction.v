@@ -1,24 +1,6 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/13/2017 03:21:16 PM
-// Design Name: 
-// Module Name: Comparator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
+//This is the module for making prediction and choosing appropriate predictor
 module prediction(CLK,reset, tag_eq_bank1, tag_eq_bank2,tag_eq_bank3, tag_eq_bank4,
 				 Bimodal_C_bit, C_bit_Bank1, C_bit_Bank2, C_bit_Bank3, C_bit_Bank4,branch_prediction);
 				 
