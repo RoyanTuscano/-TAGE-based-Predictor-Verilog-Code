@@ -7,6 +7,7 @@ I have done some modification with respect to the tag length, this was to limit 
 The TAGE predictor has 1 Bimodal Table and 4 TAGGED predictor Component with different geometric lengths respectively 7, 14, 44, 130
 
 Table 1 . Tag-length of Different tag component in different models
+
 | Model No  | T1 | T2 | T3 | T4 | No of Entries |  Total hardware budget in Bits |
 |-----------|----|----|----|----|---------------|--------------------------------|
 | 1         | 5  | 5  | 5  | 5  | 256           | 11008                          |
