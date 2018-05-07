@@ -1,4 +1,4 @@
-# -TAGE-based-Predictor-Verilog-Code
+# TAGE based Predictor Verilog Code
 Verilog Implementation of TAGE based predictor by  Andre Seznec and  Pierre Michaud
 The implementation is based on this paper http://www.irisa.fr/caps/people/seznec/JILP-COTTAGE.pdf
 
