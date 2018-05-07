@@ -1,25 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/07/2017 11:58:16 AM
-// Design Name: 
-// Module Name: PerceptronTable
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
+//This is the TAGE precitor component or table.. hear  you modify and update the TAG bits, Useful bits and predictor bits
 module TAGE_Table(Clk, wr, rd, index, rdata_tag_bits, rdata_u_bits, rdata_c_bits, wdata_tag_bits,
 					correct_prediction, inc_u_bit,dec_u_bit, inc_c_bit, dec_c_bit, alloc,update_enable);
    
