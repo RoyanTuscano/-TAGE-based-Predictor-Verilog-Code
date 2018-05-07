@@ -1,24 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/06/2017 10:03:27 PM
-// Design Name: 
-// Module Name: TopLevel
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
+//This is the Top module of the source..you can change the index bits to vary number of enteries in the Bimodal table, and TAG component tables
 
 module TopLevel(CLK, reset, BranchPrediction, PredictionCorrectReg, CorrectlyPredicted, TotalBranches);
     parameter ADDRESS_SIZE = 32;
