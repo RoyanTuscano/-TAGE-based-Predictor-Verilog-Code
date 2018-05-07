@@ -1,24 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/13/2017 03:21:16 PM
-// Design Name: 
-// Module Name: Comparator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
+//Model 3 with all tag lenths as 5 and no of entries 1024 i.e index bit size of 10
 
 module Index_Tag_Generator(CLK,reset,ghist,pc_addr, Index_bank1,Index_bank2,
 							Index_bank3, Index_bank4,
