@@ -16,6 +16,6 @@ Table 1 . Tag-length of Different tag component in different models
 The source directory has model 2(only the index_Tag.Generator.v file is changed for different models). The Model 3 is there in directory Different_TAG_Lengths.
 
 
-I have provided a sample test benchmark. The trace was obtained from the 2011 championship branh predictor tournament.
+I have provided a sample test benchmark. The trace was obtained from the 2011 championship branh predictor tournament.They are in Zip file Branch_Benchmark.zip
 
 The implementation is basic, you can optimize the verilog code as per your requirement based on the many TAGE papers published.
