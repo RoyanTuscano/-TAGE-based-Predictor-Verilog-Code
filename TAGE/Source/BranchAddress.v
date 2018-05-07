@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/06/2017 02:55:26 PM
-// Design Name: 
-// Module Name: BranchAddress
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module BranchAddress(Clk, reset, InstructionNumber, BranchAddress, BranchResult);
     parameter ADDRESS_SIZE = 8;
@@ -39,8 +19,9 @@ module BranchAddress(Clk, reset, InstructionNumber, BranchAddress, BranchResult)
         end
         BranchAddress <= {ADDRESS_SIZE{1'b0}};
         BranchResult <= {1{1'b0}};
-        $readmemh("C:/Users/royan/Desktop/Reconfigurable_Computing/branch_prediction/Branch_Data/WS04_Address.txt", Address);
-        $readmemb("C:/Users/royan/Desktop/Reconfigurable_Computing/branch_prediction/Branch_Data/WS04_branchresult.txt", Branch);
+	    //edit this as per location of the address and branch addresses of the file
+	    $readmemh("../Data/CLIENT01_Address.txt", Address);
+	    $readmemb("../Data/CLIENT01_branchresult.txt", Branch);
     end
   
     always@(Clk) begin
