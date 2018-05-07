@@ -1,25 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/25/2017 01:54:19 PM
-// Design Name: 
-// Module Name: Statistics
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
+//This file updates on the correct prediction and gives statistics
 module Statistics(Clk,reset, BranchResult, CorrectlyPredicted, TotalBranches,enable);
     parameter TRAINING_DATA_SIZE = 65536;
     parameter INSTRUCTION_INDEX_SIZE = $clog2(TRAINING_DATA_SIZE);
