@@ -10,10 +10,10 @@ Table 1 . Tag-length of Different tag component in different models
 
 | Model No  | T1 | T2 | T3 | T4 | No of Entries |  Total hardware budget in Bits |
 |-----------|----|----|----|----|---------------|--------------------------------|
-| 1         | 5  | 5  | 5  | 5  | 256           | 11008                          |
 | 2         | 8  | 8  | 9  | 9  | 512           | 29174                          |
 | 3         | 5  | 5  | 5  | 5  | 1024          | 44032                          |
-| 4         | 8  | 8  | 8  | 8  | 1024          | 58368                          |
+
+The source directory has model 2(only the index_Tag.Generator.v file is changed for different models). The Model 3 is there in directory Different_TAG_Lengths.
 
 
 I have provided a sample test benchmark. The trace was obtained from the 2011 championship branh predictor tournament.
