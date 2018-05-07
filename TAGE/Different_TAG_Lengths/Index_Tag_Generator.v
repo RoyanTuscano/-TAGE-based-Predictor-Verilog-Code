@@ -17,8 +17,7 @@ module Index_Tag_Generator(CLK,reset,ghist,pc_addr, Index_bank1,Index_bank2,
 	//parameter OutLen3=4 ;
 	//parameter OutLen4=2;
 	parameter ADDRESS_SIZE=32;	//length of the program counter
-	parameter tag_len=8;	//length of the tag used
-	parameter IL=10;		//Index size ie number of addresses...this is like the compressed length
+
 
 							
 	input CLK,reset;
@@ -51,52 +50,7 @@ module Index_Tag_Generator(CLK,reset,ghist,pc_addr, Index_bank1,Index_bank2,
 			Index_bank4<=(pc_addr[9:0])^(pc_addr[19:10])^(pc_addr[29:20])^(ghist[9:0])^(ghist[19:10])^(ghist[29:20])^(ghist[39:30])
 							^(ghist[49:40])^(ghist[59:50])^(ghist[69:60])^(ghist[79:70])^(ghist[89:80])^(ghist[99:90])^(ghist[109:100])
 							^(ghist[119:110])^(ghist[129:120]); 
-							 
-			/*
-			//This is for Index Size 8
-			Index_bank1<=(pc_addr[7:0])^(pc_addr[15:8])^(pc_addr[23:16])^(pc_addr[31:24])^(ghist[7:0]);
-			Index_bank2<=(pc_addr[7:0])^(pc_addr[15:8])^(pc_addr[23:16])^(pc_addr[31:24])^(ghist[7:0])
-							^({1'b0,ghist[14:8]});
-			Index_bank3<=(pc_addr[7:0])^(pc_addr[15:8])^(pc_addr[23:16])^(pc_addr[31:24])^(ghist[7:0])
-							^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^({4'h0,ghist[43:40]});
-			Index_bank4<=(pc_addr[7:0])^(pc_addr[15:8])^(pc_addr[23:16])^(pc_addr[31:24])^(ghist[7:0])
-							^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])				
-							^(ghist[47:40])^(ghist[55:48])^(ghist[63:56])^(ghist[71:64])^(ghist[79:72])
-							^(ghist[87:80])^(ghist[95:88])^(ghist[103:96])^(ghist[111:104])^(ghist[119:112])
-							^(ghist[127:120])^({6'b000000,ghist[129:128]});
-			*/
-			//Compute tag
-			/*
-			Comp_tag_bank1<=ghist[7:0];
-			Comp_tag_bank2<=(ghist[7:0])^({1'b0,ghist[14:8]});
-			Comp_tag_bank3<=(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^({4'b0000,ghist[43:40]});
-			Comp_tag_bank4<=(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^(ghist[47:40])^(ghist[55:48])
-							^(ghist[63:56])^(ghist[71:64])^(ghist[79:72])^(ghist[87:80])^(ghist[95:88])^(ghist[103:96])^(ghist[111:104])
-							^(ghist[119:112])^(ghist[127:120])^({6'b000000,ghist[129:128]});
-		
-            Comp_tag_bank1<=(pc_addr[7:0])^ghist[7:0];
-            Comp_tag_bank2<=(pc_addr[7:0])^(ghist[7:0])^({1'b0,ghist[14:8]});
-            Comp_tag_bank3<=(pc_addr[7:0])^(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^({4'b0000,ghist[43:40]});
-            Comp_tag_bank4<=(pc_addr[7:0])^(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^(ghist[47:40])^(ghist[55:48])
-                            ^(ghist[63:56])^(ghist[71:64])^(ghist[79:72])^(ghist[87:80])^(ghist[95:88])^(ghist[103:96])^(ghist[111:104])
-                            ^(ghist[119:112])^(ghist[127:120])^({6'b000000,ghist[129:128]});
-		
-		
-		*/
-		/*
-		    Comp_tag_bank1<=(pc_addr[7:0])^ghist[7:0] ^({ghist[6:0],1'b0});
-            Comp_tag_bank2<=(pc_addr[7:0])^(ghist[7:0])^({1'b0,ghist[14:8]})^({ghist[6:0],1'b0})^({ghist[13:7],1'b0});
-            Comp_tag_bank3<=(pc_addr[8:0])^(ghist[8:0])^(ghist[17:9])^(ghist[26:18])^(ghist[35:27])^({1'b0,ghist[43:36]})
-							^({ghist[7:0],1'b0})^({ghist[15:8],1'b0})^({ghist[23:16],1'b0})^({ghist[31:24],1'b0})
-							^({ghist[39:32],1'b0})^({4'h0,ghist[43:40],1'b0});
-            Comp_tag_bank4<=(pc_addr[8:0])^(ghist[8:0])^(ghist[17:9])^(ghist[26:18])^(ghist[35:27])^(ghist[44:36])^(ghist[53:45])
-                            ^(ghist[62:54])^(ghist[71:63])^(ghist[80:72])^(ghist[89:81])^(ghist[98:90])^(ghist[107:99])^(ghist[116:108])
-                            ^(ghist[125:117])^({5'b0,ghist[129:126]})
-							^({ghist[7:0],1'b0})^({ghist[15:8],1'b0})^({ghist[23:16],1'b0})^({ghist[31:24],1'b0})^({ghist[39:32],1'b0})
-							^({ghist[47:40],1'b0})^({ghist[55:48],1'b0})^({ghist[63:56],1'b0})^({ghist[71:64],1'b0})^({ghist[79:72],1'b0})
-							^({ghist[87:80],1'b0})^({ghist[95:88],1'b0})^({ghist[103:96],1'b0})^({ghist[111:104],1'b0})^({ghist[119:112],1'b0})
-							^({ghist[127:120],1'b0})^({6'b000000,ghist[129:128],1'b0});
-							*/
+			
 			 Comp_tag_bank1<=(pc_addr[4:0])^(ghist[4:0]) ^({ghist[3:0],1'b0});
 			 Comp_tag_bank2<=(pc_addr[4:0])^(ghist[4:0])^(ghist[9:5])^(ghist[14:10])^({ghist[3:0],1'b0})^({ghist[7:4],1'b0})^({ghist[11:8],1'b0})^({1'b0,ghist[14:12],1'b0});
 			 Comp_tag_bank3<=(pc_addr[4:0])^(ghist[4:0])^(ghist[9:5])^(ghist[14:10])^(ghist[19:15])^(ghist[24:20])^
