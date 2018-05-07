@@ -1,24 +1,6 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/13/2017 03:21:16 PM
-// Design Name: 
-// Module Name: Comparator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
+//This is for Model 2 with tag length 8 and 9
 
 module Index_Tag_Generator(CLK,reset,ghist,pc_addr, Index_bank1,Index_bank2,
 							Index_bank3, Index_bank4,
@@ -72,24 +54,7 @@ module Index_Tag_Generator(CLK,reset,ghist,pc_addr, Index_bank1,Index_bank2,
 							^(ghist[49:40])^(ghist[59:50])^(ghist[69:60])^(ghist[79:70])^(ghist[89:80])^(ghist[99:90])^(ghist[109:100])
 							^(ghist[119:110])^(ghist[129:120]); 
 							 
-			//Compute tag
-			/*
-			Comp_tag_bank1<=ghist[7:0];
-			Comp_tag_bank2<=(ghist[7:0])^({1'b0,ghist[14:8]});
-			Comp_tag_bank3<=(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^({4'b0000,ghist[43:40]});
-			Comp_tag_bank4<=(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^(ghist[47:40])^(ghist[55:48])
-							^(ghist[63:56])^(ghist[71:64])^(ghist[79:72])^(ghist[87:80])^(ghist[95:88])^(ghist[103:96])^(ghist[111:104])
-							^(ghist[119:112])^(ghist[127:120])^({6'b000000,ghist[129:128]});
-		
-            Comp_tag_bank1<=(pc_addr[7:0])^ghist[7:0];
-            Comp_tag_bank2<=(pc_addr[7:0])^(ghist[7:0])^({1'b0,ghist[14:8]});
-            Comp_tag_bank3<=(pc_addr[7:0])^(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^({4'b0000,ghist[43:40]});
-            Comp_tag_bank4<=(pc_addr[7:0])^(ghist[7:0])^(ghist[15:8])^(ghist[23:16])^(ghist[31:24])^(ghist[39:32])^(ghist[47:40])^(ghist[55:48])
-                            ^(ghist[63:56])^(ghist[71:64])^(ghist[79:72])^(ghist[87:80])^(ghist[95:88])^(ghist[103:96])^(ghist[111:104])
-                            ^(ghist[119:112])^(ghist[127:120])^({6'b000000,ghist[129:128]});
-		
-		
-		*/
+			//compute tag 
 		    Comp_tag_bank1<=(pc_addr[7:0])^ghist[7:0] ^({ghist[6:0],1'b0});
             Comp_tag_bank2<=(pc_addr[7:0])^(ghist[7:0])^({1'b0,ghist[14:8]})^({ghist[6:0],1'b0})^({ghist[13:7],1'b0});
             Comp_tag_bank3<=(pc_addr[8:0])^(ghist[8:0])^(ghist[17:9])^(ghist[26:18])^(ghist[35:27])^({1'b0,ghist[43:36]})
